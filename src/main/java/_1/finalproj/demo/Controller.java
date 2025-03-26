@@ -10,5 +10,10 @@ public class Controller {
 	public String index() {
 		return "Greetings from Spring Boot!";
 	}
+    @GetMapping("/home")
+    public String homePage(Model model) {
+        model.addAttribute("message", "Welcome to the Home Page!");
+        return "home";  // Resolves to /src/main/resources/templates/home.html
+    }
 
 }
